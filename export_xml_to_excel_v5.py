@@ -1,0 +1,392 @@
+#!/usr/bin/env python3
+"""
+export_xml_to_excel.py
+Parses clash XML and writes a styled Excel workbook:
+- Main sheet: table named "Clash_1" with 7 columns, styles, borders, images fit to cell.
+- Second sheet: "Clash_Points" with numeric X/Y/Z (3 decimal places).
+Config: config.XML_FILE and config.OUTPUT_FILE
+"""
+
+import config
+import xml.etree.ElementTree as ET
+from pathlib import Path
+import os
+import tempfile
+from openpyxl import load_workbook, Workbook
+from openpyxl.drawing.image import Image as XLImage
+from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
+from openpyxl.utils import get_column_letter
+from openpyxl.worksheet.table import Table, TableStyleInfo
+from PIL import Image as PILImage
+
+# ---------- Layout constants (adjust if needed) ----------
+HEADER_HEIGHT = 35             # points
+DATA_ROW_HEIGHT = 200          # points (as requested)
+HEADER_FILL = "2C7676"         # hex (no #)
+HEADER_FONT_COLOR = "FFFFFF"
+ALT_ROW_FILL = "DCE6F1"
+TABLE_NAME = "Clash_1"
+
+# Column widths (Excel character units)
+COL_WIDTHS = {
+    1: 5,   # A
+    2: 30,  # B Clash Details
+    3: 30,  # C Item1
+    4: 30,  # D Item2
+    5: 45,  # E Clash Image
+    6: 45,  # F User Images
+    7: 30   # G Comments
+}
+
+# Padding inside image cell (pixels)
+IMAGE_PADDING_PX = 8
+
+# Conversion helpers
+def col_width_to_pixels(col_width):
+    """
+    Approx conversion: px ≈ col_width * 7 + 5 (common heuristic)
+    """
+    return int(col_width * 7 + 5)
+
+def row_height_to_pixels(row_height_pts):
+    """
+    points -> pixels at 96 DPI: pixels = points * (96 / 72) = points * 1.333...
+    """
+    return int(row_height_pts * 96 / 72)
+
+# ---------- Helper functions ----------
+def find_image_file(href_raw: str, xml_path: Path):
+    """Try multiple candidate paths and return Path or None."""
+    if not href_raw:
+        return None
+    href = href_raw.replace("\\", "/").strip()
+    candidates = []
+    p = Path(href)
+    if p.is_absolute():
+        candidates.append(p)
+    xml_dir = xml_path.parent
+    candidates.append(xml_dir / href)
+    # try filename in same folder or ELV_files
+    fname = Path(href).name
+    candidates.append(xml_dir / fname)
+    candidates.append(xml_dir / "ELV_files" / fname)
+    # normalize and check
+    for cand in candidates:
+        try:
+            cand_resolved = cand.resolve()
+        except Exception:
+            cand_resolved = cand
+        if cand_resolved.exists():
+            return Path(cand_resolved)
+    return None
+
+def resize_image_for_cell(orig_path: Path, target_width_px: int, target_height_px: int, padding_px=8):
+    """Resize image preserving aspect ratio to fit within (target_width_px - pad) x (target_height_px - pad).
+    Saves to a temp file and returns the temp path.
+    """
+    try:
+        img = PILImage.open(orig_path)
+    except Exception as e:
+        print(f"Could not open image {orig_path}: {e}")
+        return None
+
+    max_w = max(1, target_width_px - padding_px)
+    max_h = max(1, target_height_px - padding_px)
+
+    w, h = img.size
+    ratio = min(max_w / w, max_h / h, 1.0)  # do not upscale
+    new_w = int(w * ratio)
+    new_h = int(h * ratio)
+    img = img.resize((new_w, new_h), PILImage.LANCZOS)
+
+    suffix = orig_path.suffix or ".png"
+    tf = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
+    tmp_path = Path(tf.name)
+    tf.close()
+    img.save(tmp_path)
+    return tmp_path
+
+def get_item_name_short(item_details_text):
+    """Return just the Item Name for the 'Between' line (if present)."""
+    for line in item_details_text.splitlines():
+        if line.startswith("Item Name:"):
+            return line.replace("Item Name:", "").strip()
+    # fallback to first line or Unknown
+    first = item_details_text.splitlines()[0] if item_details_text else ""
+    return first or "Unknown"
+
+def get_item_details(clash_object):
+    """Return multiline item details (Item Name, Network, Item Type, Pipe sizes)."""
+    if clash_object is None:
+        return ""
+    tags = {}
+    for st in clash_object.findall(".//smarttag"):
+        name = st.findtext("name", "").strip()
+        val = st.findtext("value", "").strip()
+        if name:
+            tags[name] = val
+    lines = []
+    if tags.get("Item Name"):
+        lines.append(f"Item Name: {tags.get('Item Name')}")
+    if tags.get("Civil3D General:Network name"):
+        lines.append(f"Network: {tags.get('Civil3D General:Network name')}")
+    part = tags.get("Civil3D General:Part Size Name", "")
+    itype = tags.get("Item Type", "")
+    type_line = " ".join(filter(None, [part, itype])).strip()
+    if type_line:
+        lines.append(f"Item Type: {type_line}")
+    inner = tags.get("Civil3D General:Inner Diameter or Width", "")
+    outer = tags.get("Civil3D General:Outer Diameter or Width", "")
+    if inner or outer:
+        lines.append(f"Pipe {inner} x {outer}".strip())
+    return "\n".join(lines)
+
+# ---------- Main export function ----------
+def export_to_excel(xml_file, output_file):
+    xml_path = Path(xml_file)
+    if not xml_path.exists():
+        print(f"XML file not found: {xml_file}")
+        return
+
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    # Create workbook & sheet
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Clash Report"
+
+    # Apply column widths
+    for col_idx, w in COL_WIDTHS.items():
+        ws.column_dimensions[get_column_letter(col_idx)].width = w
+
+    # Header row
+    headers = ["RFI No", "Clash Details", "Item 1", "Item 2", "Clash Image", "User Images", "Comments"]
+    ws.append(headers)
+
+    # Header formatting (height, fill, font)
+    ws.row_dimensions[1].height = HEADER_HEIGHT
+    header_fill = PatternFill(start_color=HEADER_FILL, end_color=HEADER_FILL, fill_type="solid")
+    header_font = Font(color=HEADER_FONT_COLOR, bold=True)
+    header_align = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    for c_idx in range(1, len(headers) + 1):
+        cell = ws.cell(row=1, column=c_idx)
+        cell.fill = header_fill
+        cell.font = header_font
+        cell.alignment = header_align
+
+    # Keep track of added rows for table ref
+    start_data_row = 2
+    current_row = start_data_row
+
+    temp_images = []  # to clean up
+
+    # Parse clashes
+    clashes = root.findall(".//clashresult")
+    for i, clash in enumerate(clashes, start=1):
+        # --- determine clash group (find ancestor <clashtest>)
+        clash_group = "Unknown Group"
+        # find parent clashtest by searching tests
+        for test in root.findall(".//clashtest"):
+            if clash in test.findall(".//clashresult"):
+                clash_group = test.get("name", "Unknown Group")
+                break
+
+        # --- clash basic
+        clash_name = clash.get("name", f"Clash{i}")
+        distance = clash.get("distance", "N/A")
+        pos = clash.find(".//pos3f")
+        coords_text = ""
+        x_val = y_val = z_val = None
+        if pos is not None:
+            x_val = float(pos.get("x") or 0.0)
+            y_val = float(pos.get("y") or 0.0)
+            z_val = float(pos.get("z") or 0.0)
+            coords_text = f"{x_val:.3f}m,\n{y_val:.3f}m,\n{z_val:.3f}m"
+
+        # --- items
+        objs = clash.findall(".//clashobject")
+        item1_text = get_item_details(objs[0]) if len(objs) > 0 else ""
+        item2_text = get_item_details(objs[1]) if len(objs) > 1 else ""
+
+        # -----------------------
+        # Column 2: Clash Details (formatted as requested)
+        # -----------------------
+        clash_details = (
+           f"Clash Group: {clash_group}\n"
+           #----f"Between: {get_item_name_short := get_item_name_short if False else None}\n"  # placeholder removed below
+           f"Between: {short_item_name(item1)} and {short_item_name(item2)}\n"
+
+        )
+
+
+        # build properly (avoid above placeholder)
+        between_line = f"Between: {get_item_name_short(item1_text)} and {get_item_name_short(item2_text)}"
+        
+
+        clash_details = (
+            f"Clash Group: {clash_group}\n"
+            f"{between_line}\n"
+            f"{clash_name}\n"
+            f"Distance: {distance}m\n"
+            f"Clash Point:\n{coords_text}"
+        )
+
+        
+        # Append row cells (we will apply formatting & borders later)
+        ws.cell(row=current_row, column=1, value=i)                    # Column 1: ID
+        ws.cell(row=current_row, column=2, value=clash_details)        # Column 2: Clash Details
+        ws.cell(row=current_row, column=3, value=item1_text)           # Column 3: Item 1
+        ws.cell(row=current_row, column=4, value=item2_text)           # Column 4: Item 2
+
+        # Column 5: embed clash screenshot if found
+        href_raw = clash.get("href") or ""
+        img_path = find_image_file(href_raw, xml_path)
+        if img_path:
+            # compute target pixel size for the cell
+            col_w = COL_WIDTHS[5]
+            target_w_px = col_width_to_pixels(col_w)
+            target_h_px = row_height_to_pixels(DATA_ROW_HEIGHT)
+            tmp_img = resize_image_for_cell(img_path, target_w_px, target_h_px, padding_px=IMAGE_PADDING_PX)
+            if tmp_img:
+                try:
+                    img_obj = XLImage(str(tmp_img))
+                    anchor_cell = f"{get_column_letter(5)}{current_row}"
+                    ws.add_image(img_obj, anchor_cell)
+                    temp_images.append(tmp_img)
+                except Exception as err:
+                    ws.cell(row=current_row, column=5, value=str(img_path))
+            else:
+                ws.cell(row=current_row, column=5, value=str(img_path))
+        else:
+            ws.cell(row=current_row, column=5, value=href_raw or "")
+
+        # Column 6 placeholder
+        ws.cell(row=current_row, column=6, value="(user images)")
+
+        # Column 7 comments placeholder
+        ws.cell(row=current_row, column=7, value="")
+
+        # Set row height for this data row
+        ws.row_dimensions[current_row].height = DATA_ROW_HEIGHT
+
+        # Alternate row fill color every second row (data rows)
+        if (current_row - start_data_row) % 2 == 0:
+            # even offset -> fill
+            for c in range(1, 8):
+                cell = ws.cell(row=current_row, column=c)
+                # apply background fill
+                cell.fill = PatternFill(start_color=ALT_ROW_FILL, end_color=ALT_ROW_FILL, fill_type="solid")
+                # set alignment and wrap
+                cell.alignment = Alignment(wrap_text=True, vertical="top")
+                cell.font = Font(color="000000")
+        else:
+            for c in range(1, 8):
+                cell = ws.cell(row=current_row, column=c)
+                cell.alignment = Alignment(wrap_text=True, vertical="top")
+                cell.font = Font(color="000000")
+
+        current_row += 1
+
+    # ---------- Add table object covering the data ----------
+    last_row = current_row - 1
+    if last_row >= start_data_row:
+        table_ref = f"A1:G{last_row}"
+        table = Table(displayName=TABLE_NAME, ref=table_ref)
+        style = TableStyleInfo(name="TableStyleMedium9", showFirstColumn=False,
+                               showLastColumn=False, showRowStripes=False, showColumnStripes=False)
+        table.tableStyleInfo = style
+        ws.add_table(table)
+
+    # ---------- Borders: outer thick, inner double vertical & horizontal ----------
+    thick = Side(style="thick", color="000000")
+    double = Side(style="double", color="000000")
+    # iterate through all cells in A1:Glast_row and set borders accordingly
+    for r in range(1, last_row + 1):
+        for c in range(1, 8):
+            top = thin = Side(style=None)
+            bottom = None
+            left = None
+            right = None
+            # outer borders
+            if r == 1:
+                top = thick
+            else:
+                top = double
+            if r == last_row:
+                bottom = thick
+            else:
+                bottom = double
+            if c == 1:
+                left = thick
+            else:
+                left = double
+            if c == 7:
+                right = thick
+            else:
+                right = double
+
+            ws.cell(row=r, column=c).border = Border(left=left, right=right, top=top, bottom=bottom)
+
+    # ---------- Create second worksheet for Clash Points ----------
+    cp = wb.create_sheet(title="Clash_Points")
+    cp_headers = ["ID", "Group", "Clash Name", "X", "Y", "Z"]
+    cp.append(cp_headers)
+    # header formatting
+    cp.row_dimensions[1].height = HEADER_HEIGHT
+    for ci in range(1, len(cp_headers) + 1):
+        cell = cp.cell(row=1, column=ci)
+        cell.fill = header_fill
+        cell.font = header_font
+        cell.alignment = header_align
+
+    # Fill clash points sheet
+    row_index = 2
+    for i, clash in enumerate(clashes, start=1):
+        # group
+        clash_group = "Unknown Group"
+        for test in root.findall(".//clashtest"):
+            if clash in test.findall(".//clashresult"):
+                clash_group = test.get("name", "Unknown Group")
+                break
+        clash_name = clash.get("name", f"Clash{i}")
+        pos = clash.find(".//pos3f")
+        if pos is not None:
+            x_val = float(pos.get("x") or 0.0)
+            y_val = float(pos.get("y") or 0.0)
+            z_val = float(pos.get("z") or 0.0)
+        else:
+            x_val = y_val = z_val = None
+
+        cp.cell(row=row_index, column=1, value=i)
+        cp.cell(row=row_index, column=2, value=clash_group)
+        cp.cell(row=row_index, column=3, value=clash_name)
+        # numeric X, Y, Z with 3 decimals
+        if x_val is not None:
+            cp.cell(row=row_index, column=4, value=round(x_val, 3))
+            cp.cell(row=row_index, column=5, value=round(y_val, 3))
+            cp.cell(row=row_index, column=6, value=round(z_val, 3))
+        row_index += 1
+
+    # Optional: set column widths for Clash_Points
+    cp.column_dimensions['A'].width = 6
+    cp.column_dimensions['B'].width = 18
+    cp.column_dimensions['C'].width = 25
+    cp.column_dimensions['D'].width = 12
+    cp.column_dimensions['E'].width = 12
+    cp.column_dimensions['F'].width = 12
+
+    # Save workbook
+    wb.save(output_file)
+    print(f"Saved: {output_file}")
+
+    # remove temp images
+    for t in temp_images:
+        try:
+            os.remove(t)
+        except Exception:
+            pass
+
+# ---------- Run ----------
+if __name__ == "__main__":
+    export_to_excel(config.XML_FILE, config.OUTPUT_FILE)
