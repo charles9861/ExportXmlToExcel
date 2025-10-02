@@ -4,6 +4,8 @@ https://github.com/charles9861/ExportXmlToExcel.git
 
 echo "# ExportXmlToExcel" >> README.md
 git init
+git add .
+
 git add README.md
 git commit -m "first commit"
 git branch -M main
