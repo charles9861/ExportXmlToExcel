@@ -17,6 +17,7 @@ I’ll give you:
 Save this file in the root of your project (same folder as your Excel/Word exporter modules).
 Edit the EXPORT_EXCEL_MODULE / EXPORT_WORD_MODULE config values if your module filenames are different.
 
+``` python
 #!/usr/bin/env python3
 """
 clash_exporter_gui.py
@@ -186,13 +187,15 @@ tk.Button(frame_buttons, text="Close", width=12, command=root.quit).grid(row=0, 
 
 root.mainloop()
 
-
+``` 
 ⸻
 
 2) export_xml_to_word.py (example)
 
 If you already have a Word export function, replace this file or rename it and update EXPORT_WORD_MODULE in the GUI config.
 This example uses python-docx to create a simple report and includes images if they’re referenced in the XML (basic behavior — adapt to your formatting).
+
+``` python
 
 #!/usr/bin/env python3
 """
@@ -300,6 +303,7 @@ def export_to_word(xml_file, output_file):
     doc.save(output_file)
     print(f"Saved Word report: {output_file}")
 
+```
 
 ⸻
 
@@ -307,6 +311,8 @@ def export_to_word(xml_file, output_file):
 
 A short step-by-step README you can commit:
 
+
+``` python
 # Clash Exporter GUI (Tkinter)
 
 Small GUI to run XML → Excel / Word exporters from a simple desktop window.
@@ -322,15 +328,17 @@ Install the dependencies used by your exporters and (for the example Word export
 ```bash
 pip install openpyxl pillow python-docx
 
+```
+
 Usage (development)
 	1.	Put clash_exporter_gui.py in the same folder as your Excel exporter module.
 	2.	Edit the top of clash_exporter_gui.py to set:
 	•	EXPORT_EXCEL_MODULE to your Excel exporter module name (filename without .py)
 	•	EXPORT_WORD_MODULE to your Word exporter module name (if different)
 	3.	Run:
-
+``` bash
 python clash_exporter_gui.py
-
+``` 
 	4.	Click Browse… to select an XML file, then Export to Excel or Export to Word.
 	•	By default, the output will be saved into the last-used folder (or the XML’s folder).
 	•	Check Ask where to save to show a Save As dialog instead.
@@ -339,11 +347,15 @@ Packaging to a single executable (Windows example)
 
 Install PyInstaller:
 
+``` bash
 pip install pyinstaller
+``` 
 
 Build:
 
+``` bash
 pyinstaller --onefile --noconsole clash_exporter_gui.py
+```
 
 The generated executable will be in dist/.
 
@@ -355,6 +367,8 @@ Notes
 
 ---
 
+
+``` python
 ## Quick checklist for you (on PC)
 1. Put the three files in your repo root.  
 2. Ensure your **Excel exporter** module is present and exposes `export_to_excel(xml, out)`. If it has a different name, edit `EXPORT_EXCEL_MODULE` at top of the GUI file.  
@@ -363,7 +377,7 @@ Notes
 5. If everything works, package with PyInstaller (optional) to share an `.exe`.
 
 ---
-
+``` pyhton
 ## Optional polish ideas (later)
 - Add a small progress bar during export.  
 - Add a small preview pane for the first clash image.  
@@ -377,3 +391,4 @@ If you want, I can:
 - Produce a one-file `export_xml_to_word.py` that matches your Word formatting (if you paste your Word export code here I will convert it).
 
 Want me to update the GUI config now to use the exact filenames from your project (tell me the filenames)?
+``` 
