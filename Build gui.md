@@ -338,8 +338,9 @@ Usage (development)
 	3.	Run:
 ``` bash
 python clash_exporter_gui.py
-``` 
-	4.	Click Browse… to select an XML file, then Export to Excel or Export to Word.
+```
+---
+4.	Click Browse… to select an XML file, then Export to Excel or Export to Word.
 	•	By default, the output will be saved into the last-used folder (or the XML’s folder).
 	•	Check Ask where to save to show a Save As dialog instead.
 
