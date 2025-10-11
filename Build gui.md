@@ -383,6 +383,7 @@ Notes
 - Add a small preview pane for the first clash image.  
 - Add drag-and-drop of XML onto the window.  
 - Replace Tkinter with PySimpleGUI or PyQt for a nicer UI.
+``` 
 
 ---
 
@@ -390,5 +391,5 @@ If you want, I can:
 - Tailor the GUI to *exactly* call your current module names (tell me the filenames) — I’ll update the `EXPORT_...` defaults before you commit.
 - Produce a one-file `export_xml_to_word.py` that matches your Word formatting (if you paste your Word export code here I will convert it).
 
-Want me to update the GUI config now to use the exact filenames from your project (tell me the filenames)?
-``` 
+Want me to update the GUI config now to use the exact filenames from your project (tell me the filenames)
+
