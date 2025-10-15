@@ -761,50 +761,6 @@
                   </smarttag>
                 </smarttags>
               </clashobject>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>191B0</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value>0.680m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Serv_ELV-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value>0.980m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>6 x 160mm</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>6f582c89-b389-529c-a780-c7fb10af1512</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>$-PipeNetworks_Pipes_ELV</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>ELV_P-035</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Pipe</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
             </clashobjects>
           </clashresult>
           <clashresult name="Clash9" guid="eb038b35-fb30-44da-b9ea-c623449c28be" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd000009.jpg" status="active" distance="-0.253">
@@ -1058,50 +1014,6 @@
                   </smarttag>
                 </smarttags>
               </clashobject>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>191B6</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value>0.680m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Serv_ELV-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value>0.980m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>6 x 160mm</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>a6985df1-1458-5cf7-afc7-2642dff45408</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>$-PipeNetworks_Pipes_ELV</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>ELV_P-037</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Pipe</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
             </clashobjects>
           </clashresult>
           <clashresult name="Clash12" guid="1c6ff8f1-e176-4051-bff0-6eedd1b325d4" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd000012.jpg" status="active" distance="-0.234">
@@ -1150,50 +1062,6 @@
                   <smarttag>
                     <name>Item Name</name>
                     <value>LV_P-103</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Pipe</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>191B3</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value>0.680m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Serv_ELV-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value>0.980m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>6 x 160mm</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>d5de8a44-e68e-5b28-9393-c476a49584e3</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>$-PipeNetworks_Pipes_ELV</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>ELV_P-036</value>
                   </smarttag>
                   <smarttag>
                     <name>Item Type</name>
@@ -3284,7 +3152,7 @@
           </clashresult>
         </clashresults>
       </clashtest>
-      <clashtest name="FHM" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="FHM" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
@@ -3293,11 +3161,11 @@
         </rules>
         <summary total="2" new="0" active="0" reviewed="0" approved="2" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults/>
       </clashtest>
-      <clashtest name="Fibre" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="Fibre" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
@@ -3306,7 +3174,7 @@
         </rules>
         <summary total="5" new="0" active="5" reviewed="0" approved="0" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults>
           <clashresult name="Clash1" guid="32635c14-d44d-43f0-9d59-9ca899c46b90" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd020001.jpg" status="active" distance="-0.202">
@@ -3806,7 +3674,7 @@
           </clashresult>
         </clashresults>
       </clashtest>
-      <clashtest name="HRS" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="HRS" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
@@ -3815,7 +3683,7 @@
         </rules>
         <summary total="0" new="0" active="0" reviewed="0" approved="0" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults/>
       </clashtest>
@@ -5021,7 +4889,7 @@
           </clashresult>
         </clashresults>
       </clashtest>
-      <clashtest name="Land" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="Land" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
@@ -5030,7 +4898,7 @@
         </rules>
         <summary total="2" new="0" active="2" reviewed="0" approved="0" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults>
           <clashresult name="Clash1" guid="fddcadcf-ff92-4fc3-ae7c-51f71d308c4c" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd050001.jpg" status="active" distance="-0.087">
@@ -5233,16 +5101,16 @@
           </clashresult>
         </clashresults>
       </clashtest>
-      <clashtest name="LV" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="LV" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
             <ruleparams/>
           </rule>
         </rules>
-        <summary total="10" new="0" active="10" reviewed="0" approved="0" resolved="0">
+        <summary total="10" new="0" active="7" reviewed="0" approved="3" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults>
           <clashresult name="Clash1" guid="c215e6a1-ddf5-4d1a-96ef-dfc43bea9efc" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060001.jpg" status="active" distance="-0.179">
@@ -5542,304 +5410,7 @@
               </clashobject>
             </clashobjects>
           </clashresult>
-          <clashresult name="Clash4" guid="42f64fab-38d9-4da9-80df-51804d8fd844" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060004.jpg" status="active" distance="-0.087">
-            <resultstatus>Active</resultstatus>
-            <clashpoint>
-              <pos3f x="113806.840" y="128825.195" z="29.699"/>
-            </clashpoint>
-            <createddate>
-              <date year="2025" month="9" day="30" hour="6" minute="48" second="52"/>
-            </createddate>
-            <clashobjects>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>17E1C</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Drain_Storm-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>2,069 x 1,220 Rect Structure 800 x 800 Frm 150 FmHt 100 Slab 300 Wall 220 Floor</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>26c0596e-6477-5efa-a448-b9823ed526df</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>DRAIN_STORM</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>S7-24.2 (FS)</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Structure</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>1A805</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value>0.100m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Serv_LV-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value>0.110m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>100 mm PVC Pipe</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>bbc9a9fe-70ea-5c3d-a95d-6d19622834d8</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>$-PipeNetworks_Pipes_LV</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>LV_P-197</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Pipe</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
-            </clashobjects>
-          </clashresult>
-          <clashresult name="Clash5" guid="e1cecb16-0ea1-4cfb-a379-1201cb6173ff" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060005.jpg" status="active" distance="-0.086">
-            <resultstatus>Active</resultstatus>
-            <clashpoint>
-              <pos3f x="113800.665" y="128861.597" z="29.699"/>
-            </clashpoint>
-            <createddate>
-              <date year="2025" month="9" day="30" hour="6" minute="48" second="52"/>
-            </createddate>
-            <clashobjects>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>17E5C</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Drain_Storm-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>2,069 x 1,220 Rect Structure 800 x 800 Frm 150 FmHt 100 Slab 300 Wall 220 Floor</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>a8e8abe9-91f9-5984-854e-4a7a118f7255</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>DRAIN_STORM</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>S7-25.2 (FS)</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Structure</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>1A802</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value>0.100m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Serv_LV-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value>0.110m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>100 mm PVC Pipe</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>823a7b76-72e8-5134-9e29-9c437a00eb17</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>$-PipeNetworks_Pipes_LV</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>LV_P-196</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Pipe</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
-            </clashobjects>
-          </clashresult>
-          <clashresult name="Clash6" guid="2e79b00b-b2b5-452f-9f75-a21e7c4b2ac6" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060006.jpg" status="active" distance="-0.085">
-            <resultstatus>Active</resultstatus>
-            <clashpoint>
-              <pos3f x="113795.184" y="128894.031" z="29.699"/>
-            </clashpoint>
-            <createddate>
-              <date year="2025" month="9" day="30" hour="6" minute="48" second="52"/>
-            </createddate>
-            <clashobjects>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>17E92</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Drain_Storm-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>2,069 x 1,220 Rect Structure 800 x 800 Frm 150 FmHt 100 Slab 300 Wall 220 Floor</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>8d3f8a5a-a2b4-5194-8275-b588769869da</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>DRAIN_STORM</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>S7-26.2 (FS)</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Structure</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
-              <clashobject>
-                <objectattribute>
-                  <name>Entity Handle</name>
-                  <value>1A7FF</value>
-                </objectattribute>
-                <smarttags>
-                  <smarttag>
-                    <name>Civil3D General:Inner Diameter or Width</name>
-                    <value>0.100m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Network name</name>
-                    <value>GBL7A_Serv_LV-80R</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Outer Diameter or Width</name>
-                    <value>0.110m</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Part Size Name</name>
-                    <value>100 mm PVC Pipe</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Civil3D General:Pressure Part Network Name</name>
-                    <value></value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item GUID</name>
-                    <value>a9d24f3e-46e6-5981-89a1-bd0e25c80502</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Layer</name>
-                    <value>$-PipeNetworks_Pipes_LV</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Name</name>
-                    <value>LV_P-195</value>
-                  </smarttag>
-                  <smarttag>
-                    <name>Item Type</name>
-                    <value>Pipe</value>
-                  </smarttag>
-                </smarttags>
-              </clashobject>
-            </clashobjects>
-          </clashresult>
-          <clashresult name="Clash7" guid="f486ea3e-925c-49e6-be18-e8a9407e0919" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060007.jpg" status="active" distance="-0.037">
+          <clashresult name="Clash7" guid="f486ea3e-925c-49e6-be18-e8a9407e0919" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060004.jpg" status="active" distance="-0.037">
             <resultstatus>Active</resultstatus>
             <clashpoint>
               <pos3f x="113973.273" y="128926.836" z="29.636"/>
@@ -5938,7 +5509,7 @@
               </clashobject>
             </clashobjects>
           </clashresult>
-          <clashresult name="Clash8" guid="237f1d5d-83f2-4204-bf18-2205b94651ae" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060008.jpg" status="active" distance="-0.024">
+          <clashresult name="Clash8" guid="237f1d5d-83f2-4204-bf18-2205b94651ae" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060005.jpg" status="active" distance="-0.024">
             <resultstatus>Active</resultstatus>
             <clashpoint>
               <pos3f x="113806.345" y="128824.866" z="29.750"/>
@@ -6037,7 +5608,7 @@
               </clashobject>
             </clashobjects>
           </clashresult>
-          <clashresult name="Clash9" guid="b6561393-261f-4a0d-a385-f9a6046ceb1d" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060009.jpg" status="active" distance="-0.023">
+          <clashresult name="Clash9" guid="b6561393-261f-4a0d-a385-f9a6046ceb1d" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060006.jpg" status="active" distance="-0.023">
             <resultstatus>Active</resultstatus>
             <clashpoint>
               <pos3f x="113800.123" y="128861.246" z="29.750"/>
@@ -6136,7 +5707,7 @@
               </clashobject>
             </clashobjects>
           </clashresult>
-          <clashresult name="Clash10" guid="49679b0f-1579-4c1d-bb6b-f57e644c0b40" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060010.jpg" status="active" distance="-0.023">
+          <clashresult name="Clash10" guid="49679b0f-1579-4c1d-bb6b-f57e644c0b40" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd060007.jpg" status="active" distance="-0.023">
             <resultstatus>Active</resultstatus>
             <clashpoint>
               <pos3f x="113794.701" y="128893.744" z="29.727"/>
@@ -6237,7 +5808,7 @@
           </clashresult>
         </clashresults>
       </clashtest>
-      <clashtest name="MV" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="MV" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
@@ -6246,11 +5817,11 @@
         </rules>
         <summary total="0" new="0" active="0" reviewed="0" approved="0" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults/>
       </clashtest>
-      <clashtest name="MWS" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="MWS" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
@@ -6259,11 +5830,11 @@
         </rules>
         <summary total="0" new="0" active="0" reviewed="0" approved="0" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults/>
       </clashtest>
-      <clashtest name="Sanitary" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="Sanitary" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
@@ -6272,7 +5843,7 @@
         </rules>
         <summary total="2" new="0" active="2" reviewed="0" approved="0" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults>
           <clashresult name="Clash1" guid="3eefe709-f4fa-4b0e-8a34-0b9f81f92c9f" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd090001.jpg" status="active" distance="-0.424">
@@ -6488,7 +6059,7 @@
         </summary>
         <clashresults/>
       </clashtest>
-      <clashtest name="Test 2" test_type="hard" status="ok" tolerance="0.000" merge_composites="1">
+      <clashtest name="Storm" test_type="hard" status="old" tolerance="0.000" merge_composites="1">
         <linkage mode="none"/>
         <rules>
           <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
@@ -6497,7 +6068,7 @@
         </rules>
         <summary total="13" new="0" active="13" reviewed="0" approved="0" resolved="0">
           <testtype>Hard</testtype>
-          <teststatus>OK</teststatus>
+          <teststatus>Old</teststatus>
         </summary>
         <clashresults>
           <clashresult name="Clash1" guid="f45b85ad-2461-43ac-8a01-1d8aba12b0bc" href="GBL7A-TSL-CIVL-UDS_80R_C3D (wip)_files\cd110001.jpg" status="active" distance="-0.367">

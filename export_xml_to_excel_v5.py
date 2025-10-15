@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-export_xml_to_excel.py
+python export_xml_to_excel_v5.py
 Parses clash XML and writes a styled Excel workbook:
 - Main sheet: table named "Clash_1" with 7 columns, styles, borders, images fit to cell.
 - Second sheet: "Clash_Points" with numeric X/Y/Z (3 decimal places).
@@ -181,49 +181,44 @@ def export_to_excel(xml_file, output_file):
 
     temp_images = []  # to clean up
 
-    # Parse clashes
+
+#---------------Fix-from-----------
+
+     # Parse clashes
     clashes = root.findall(".//clashresult")
     for i, clash in enumerate(clashes, start=1):
-        # --- determine clash group (find ancestor <clashtest>)
+        # Find group (search by guid to avoid fragile element identity checks)
         clash_group = "Unknown Group"
-        # find parent clashtest by searching tests
+        clash_guid = clash.get("guid")
         for test in root.findall(".//clashtest"):
-            if clash in test.findall(".//clashresult"):
-                clash_group = test.get("name", "Unknown Group")
+            for cr in test.findall(".//clashresult"):
+                if clash_guid and cr.get("guid") == clash_guid:
+                    clash_group = test.get("name", "Unknown Group")
+                    break
+            if clash_group != "Unknown Group":
                 break
 
-        # --- clash basic
+        # --- clash basic ---
         clash_name = clash.get("name", f"Clash{i}")
         distance = clash.get("distance", "N/A")
         pos = clash.find(".//pos3f")
         coords_text = ""
         x_val = y_val = z_val = None
         if pos is not None:
-            x_val = float(pos.get("x") or 0.0)
-            y_val = float(pos.get("y") or 0.0)
-            z_val = float(pos.get("z") or 0.0)
-            coords_text = f"{x_val:.3f}m,\n{y_val:.3f}m,\n{z_val:.3f}m"
+            try:
+                x_val = float(pos.get("x") or 0.0)
+                y_val = float(pos.get("y") or 0.0)
+                z_val = float(pos.get("z") or 0.0)
+                coords_text = f"{x_val:.3f}m,\n{y_val:.3f}m,\n{z_val:.3f}m"
+            except Exception:
+                coords_text = ""
 
-        # --- items
+        # --- items ---
         objs = clash.findall(".//clashobject")
         item1_text = get_item_details(objs[0]) if len(objs) > 0 else ""
         item2_text = get_item_details(objs[1]) if len(objs) > 1 else ""
 
-        # -----------------------
-        # Column 2: Clash Details (formatted as requested)
-        # -----------------------
-        clash_details = (
-           f"Clash Group: {clash_group}\n"
-           #----f"Between: {get_item_name_short := get_item_name_short if False else None}\n"  # placeholder removed below
-           f"Between: {short_item_name(item1)} and {short_item_name(item2)}\n"
-
-        )
-
-
-        # build properly (avoid above placeholder)
-        between_line = f"Between: {get_item_name_short(item1_text)} and {get_item_name_short(item2_text)}"
-        
-
+        between_line = f"Between: {get_item_name_short(item1_text)} and {get_item_name_short(item2_text)}\n"
         clash_details = (
             f"Clash Group: {clash_group}\n"
             f"{between_line}\n"
@@ -232,18 +227,15 @@ def export_to_excel(xml_file, output_file):
             f"Clash Point:\n{coords_text}"
         )
 
-        
-        # Append row cells (we will apply formatting & borders later)
-        ws.cell(row=current_row, column=1, value=i)                    # Column 1: ID
-        ws.cell(row=current_row, column=2, value=clash_details)        # Column 2: Clash Details
-        ws.cell(row=current_row, column=3, value=item1_text)           # Column 3: Item 1
-        ws.cell(row=current_row, column=4, value=item2_text)           # Column 4: Item 2
+        # ---- write to Excel ----
+        ws.cell(row=current_row, column=1, value=i)
+        ws.cell(row=current_row, column=2, value=clash_details)
+        ws.cell(row=current_row, column=3, value=item1_text)
+        ws.cell(row=current_row, column=4, value=item2_text)
 
-        # Column 5: embed clash screenshot if found
         href_raw = clash.get("href") or ""
         img_path = find_image_file(href_raw, xml_path)
         if img_path:
-            # compute target pixel size for the cell
             col_w = COL_WIDTHS[5]
             target_w_px = col_width_to_pixels(col_w)
             target_h_px = row_height_to_pixels(DATA_ROW_HEIGHT)
@@ -261,32 +253,24 @@ def export_to_excel(xml_file, output_file):
         else:
             ws.cell(row=current_row, column=5, value=href_raw or "")
 
-        # Column 6 placeholder
         ws.cell(row=current_row, column=6, value="(user images)")
-
-        # Column 7 comments placeholder
         ws.cell(row=current_row, column=7, value="")
 
-        # Set row height for this data row
         ws.row_dimensions[current_row].height = DATA_ROW_HEIGHT
 
-        # Alternate row fill color every second row (data rows)
-        if (current_row - start_data_row) % 2 == 0:
-            # even offset -> fill
-            for c in range(1, 8):
-                cell = ws.cell(row=current_row, column=c)
-                # apply background fill
+        offset = current_row - start_data_row
+        for c in range(1, 8):
+            cell = ws.cell(row=current_row, column=c)
+            cell.alignment = Alignment(wrap_text=True, vertical="top")
+            cell.font = Font(color="000000")
+            if (offset % 2) == 0:
                 cell.fill = PatternFill(start_color=ALT_ROW_FILL, end_color=ALT_ROW_FILL, fill_type="solid")
-                # set alignment and wrap
-                cell.alignment = Alignment(wrap_text=True, vertical="top")
-                cell.font = Font(color="000000")
-        else:
-            for c in range(1, 8):
-                cell = ws.cell(row=current_row, column=c)
-                cell.alignment = Alignment(wrap_text=True, vertical="top")
-                cell.font = Font(color="000000")
 
+        # increment row AFTER finishing all work for this clash
         current_row += 1
+ 
+
+    #-------FIX to------
 
     # ---------- Add table object covering the data ----------
     last_row = current_row - 1
@@ -327,6 +311,9 @@ def export_to_excel(xml_file, output_file):
                 right = double
 
             ws.cell(row=r, column=c).border = Border(left=left, right=right, top=top, bottom=bottom)
+
+            header_font = Font(color=HEADER_FONT_COLOR, bold=True, size=18)
+
 
     # ---------- Create second worksheet for Clash Points ----------
     cp = wb.create_sheet(title="Clash_Points")
