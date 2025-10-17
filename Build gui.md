@@ -391,7 +391,7 @@ Notes
 If you want, I can:
 - Tailor the GUI to *exactly* call your current module names (tell me the filenames) — I’ll update the `EXPORT_...` defaults before you commit.
 
-# part 2
+# **Part 2
 ---
 
 Perfect ✅
