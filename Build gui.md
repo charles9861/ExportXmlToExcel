@@ -390,6 +390,204 @@ Notes
 
 If you want, I can:
 - Tailor the GUI to *exactly* call your current module names (tell me the filenames) — I’ll update the `EXPORT_...` defaults before you commit.
+
+# part 2
+---
+
+Perfect ✅
+You’re now stepping into a **configurable XML export engine**, which is exactly how professional data extractors are built — we’ll make it modular, clear, and future-proof.
+
+---
+
+# 🧠 What We’re Building Now: “XML Field Discovery Tool”
+
+We’ll start with **PHASE 1**, a standalone script that:
+
+* Reads your XML file (like your Navisworks clash report).
+* Walks through **every element and attribute** recursively.
+* Builds a **list of all unique XML field paths** (like `clashresult/@guid`, `clashobject/smarttag/name`, etc.).
+* Saves that list to a file called `available_fields.json`.
+* Optionally, prints a summary in the terminal so you can preview it.
+
+Once we have that list, we can later build the GUI picker and dynamic exporter templates.
+
+---
+
+# 📜 The Script — `discover_xml_fields.py`
+
+```python
+#!/usr/bin/env python3
+"""
+discover_xml_fields.py
+--------------------------------
+Scans an XML file and extracts all possible element and attribute field paths.
+
+Usage:
+    python discover_xml_fields.py path/to/input.xml
+
+What it does:
+--------------
+1. Loads the XML.
+2. Traverses all elements and attributes recursively.
+3. Builds unique "field paths" like:
+   - clashresult/@guid
+   - clashresult/@name
+   - clashobject/smarttag/value
+   - clashpoint/pos3f/@x
+4. Saves the discovered paths into `available_fields.json`.
+
+Output Example:
+---------------
+{
+  "elements": [
+    "exchange/batchtest/clashtests/clashtest/summary/testtype",
+    "exchange/batchtest/clashtests/clashtest/summary/teststatus",
+    ...
+  ],
+  "attributes": [
+    "exchange/batchtest/clashtests/clashtest/@name",
+    "exchange/batchtest/clashtests/clashtest/clashresults/clashresult/@guid",
+    ...
+  ]
+}
+"""
+
+import sys
+import json
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+def discover_fields(xml_path: Path):
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+
+    elements = set()
+    attributes = set()
+
+    def walk(elem, path=""):
+        tag_path = f"{path}/{elem.tag}" if path else elem.tag
+        # Add attributes for this element
+        for attr in elem.attrib:
+            attributes.add(f"{tag_path}/@{attr}")
+        # If element has text, record the tag itself
+        if (elem.text and elem.text.strip()) or len(elem):
+            elements.add(tag_path)
+        # Recurse
+        for child in elem:
+            walk(child, tag_path)
+
+    walk(root)
+
+    return sorted(elements), sorted(attributes)
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python discover_xml_fields.py path/to/input.xml")
+        sys.exit(1)
+
+    xml_file = Path(sys.argv[1])
+    if not xml_file.exists():
+        print(f"❌ File not found: {xml_file}")
+        sys.exit(1)
+
+    print(f"🔍 Scanning XML: {xml_file.name}")
+    elements, attributes = discover_fields(xml_file)
+
+    output_data = {"elements": elements, "attributes": attributes}
+    output_file = xml_file.with_name("available_fields.json")
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(output_data, f, indent=2)
+
+    print(f"✅ Done! Found {len(elements)} elements and {len(attributes)} attributes.")
+    print(f"📁 Saved to: {output_file}")
+
+    # Optional preview
+    print("\nSample element paths:")
+    for e in elements[:10]:
+        print("  ", e)
+    print("...")
+
+    print("\nSample attribute paths:")
+    for a in attributes[:10]:
+        print("  ", a)
+    print("...")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+---
+
+# 🧩 What Happens When You Run It
+
+### 🔸 Input
+
+You run:
+
+```bash
+python discover_xml_fields.py R40_Storm.xml
+```
+
+### 🔸 Process
+
+The script:
+
+1. Loads your XML structure.
+2. Walks through **every tag** (like `<clashresult>`, `<pos3f>`, `<smarttag>`, etc.).
+3. Collects both:
+
+   * element paths (like `exchange/batchtest/clashtests/clashtest/summary/testtype`)
+   * attribute paths (like `clashresult/@name` or `pos3f/@x`).
+
+### 🔸 Output
+
+It writes a JSON file **next to your XML file**:
+
+```
+available_fields.json
+```
+
+Example content (shortened for clarity):
+
+```json
+{
+  "elements": [
+    "exchange/batchtest/clashtests/clashtest/summary/testtype",
+    "exchange/batchtest/clashtests/clashtest/clashresults/clashresult/clashobjects/clashobject/smarttags/smarttag/name",
+    "exchange/batchtest/clashtests/clashtest/clashresults/clashresult/clashpoint/pos3f"
+  ],
+  "attributes": [
+    "exchange/batchtest/clashtests/clashtest/@name",
+    "exchange/batchtest/clashtests/clashtest/clashresults/clashresult/@guid",
+    "exchange/batchtest/clashtests/clashtest/clashresults/clashresult/clashpoint/pos3f/@x"
+  ]
+}
+```
+
+---
+
+# 🧭 Why This Step Matters
+
+This gives you:
+✅ A **complete field map** of your XML — no guessing required.
+✅ A **foundation for your GUI “Field Picker”** (Phase 2).
+✅ A **configurable export system** where you can define your templates using `{path}` placeholders.
+
+---
+
+# ⚙️ Next Step (after running this)
+
+Once you confirm it works and you see your `available_fields.json` file:
+→ We’ll move to **Phase 2: Field Selection GUI**,
+where you’ll choose fields, combine them into templates, and save/export configurations.
+
+---
+
+Would you like me to prepare **Phase 2 next** (the Tkinter “Field Selector & Template Designer” GUI) once you test this?
+
 - Produce a one-file `export_xml_to_word.py` that matches your Word formatting (if you paste your Word export code here I will convert it).
 
 Want me to update the GUI config now to use the exact filenames from your project (tell me the filenames)
