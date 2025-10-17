@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exchange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" units="m" filename="" filepath="">
+  <batchtest name="Report" internal_name="Report" units="m">
+    <clashtests>
+      <clashtest name="R40 Storm" test_type="hard" status="old" tolerance="0.015" merge_composites="0">
+        <linkage mode="none"/>
+        <rules>
+          <rule name="Items in same layer" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_layer">
+            <ruleparams/>
+          </rule>
+          <rule name="Items in same file" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_same_file">
+            <ruleparams/>
+          </rule>
+          <rule name="Items with coincident snap points" enabled="1" creator="lcop_clash_adapator_for_lcodpclash_ignore_coincident_snap_points">
+            <ruleparams/>
+          </rule>
+          <rule name="Ignore Duplicates by GUID" enabled="1" creator="LcOclClashIgnoreSameTwoPropsPlugin">
+            <ruleparams>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="int32">0</data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="name">
+                    <name internal="LcOaNode">Item</name>
+                  </data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="int32">0</data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="name">
+                    <name internal="LcOaNodeGuid">GUID</name>
+                  </data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="int32">0</data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="int32">0</data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="name">
+                    <name internal="LcOaNode">Item</name>
+                  </data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="int32">0</data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="name">
+                    <name internal="LcOaNodeGuid">GUID</name>
+                  </data>
+                </value>
+              </ruleparam>
+              <ruleparam specific_data="0">
+                <value>
+                  <data type="int32">0</data>
+                </value>
+              </ruleparam>
+            </ruleparams>
+          </rule>
+        </rules>
+        <summary total="87" new="0" active="29" reviewed="0" approved="57" resolved="1">
+          <testtype>Hard</testtype>
+          <teststatus>Old</teststatus>
+        </summary>
+        <clashresults>
+          <clashresult name="Clash64" guid="67e467fa-d51f-424d-99dd-0a81cccfd32e" href="R40 Storm_files\cd050001.jpg" status="active" distance="-0.174">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114110.269" y="128815.035" z="29.574"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>19BA0</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>LV1_4x160-0116</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179D9</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (56)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash65" guid="f9f4639b-00bf-45da-a5aa-4af00e935602" href="R40 Storm_files\cd050002.jpg" status="active" distance="-0.159">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114113.820" y="128794.241" z="29.550"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>19BA6</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>LV1_4x160-282</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179E5</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (61)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash66" guid="a78e3d76-f538-49ad-9812-1eb0471e9495" href="R40 Storm_files\cd050003.jpg" status="active" distance="-0.134">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114010.619" y="128720.988" z="29.278"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1E42F</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe1087 (53)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A63</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (163)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash67" guid="524e811e-c63b-4cb2-a269-5140bc8e5144" href="R40 Storm_files\cd050004.jpg" status="active" distance="-0.113">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114004.958" y="128751.474" z="29.002"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1E429</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe1087 (53)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A1E</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (81)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash68" guid="67a86bfd-47c3-4c6b-a8e7-ea585d53d32a" href="R40 Storm_files\cd050005.jpg" status="active" distance="-0.107">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114119.701" y="128757.312" z="29.370"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>19BAC</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>LV1_4x160-055</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179F1</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (65)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash69" guid="05e06db6-1d46-40a7-8808-b17491f16f12" href="R40 Storm_files\cd050006.jpg" status="active" distance="-0.104">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114124.105" y="128734.019" z="29.366"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>19BB5</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>LV1_4x160-034</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A03</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (71)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash70" guid="e9b8cee9-f029-480c-a85e-7575c78f183c" href="R40 Storm_files\cd050007.jpg" status="active" distance="-0.102">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114032.923" y="128711.200" z="29.364"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1E1AF</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe1087 (53)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A1B</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (79)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash71" guid="e242bae2-2976-48e7-95e6-0baac783f71a" href="R40 Storm_files\cd050008.jpg" status="active" distance="-0.099">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114000.352" y="128781.106" z="29.271"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1E32A</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe1087 (53)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A21</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (82)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash72" guid="67afd5c8-ae1a-4d19-9706-9b117c0383d5" href="R40 Storm_files\cd050009.jpg" status="active" distance="-0.072">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113994.465" y="128811.538" z="29.079"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1E441</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe1087 (53)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A24</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (83)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash73" guid="471eb852-a5e3-4840-b93e-4298d6465e0e" href="R40 Storm_files\cd050010.jpg" status="active" distance="-0.058">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113990.646" y="128837.204" z="29.375"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1E447</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe1087 (53)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A27</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (84)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash74" guid="4a00b4f6-2616-4171-885b-1f9985db071d" href="R40 Storm_files\cd050011.jpg" status="active" distance="-0.049">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114127.540" y="128713.904" z="29.341"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>19BBB</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>LV1_4x160-010</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A09</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (73)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash76" guid="1c3e3025-b7c1-4214-984b-a0c2625e5a4b" href="R40 Storm_files\cd050012.jpg" status="active" distance="-0.044">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113996.945" y="128772.648" z="27.900"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>16BE0</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe976</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17829</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe256</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash78" guid="d2bdcd2a-23b1-4a36-b995-c5680f9b9ddd" href="R40 Storm_files\cd050013.jpg" status="active" distance="-0.039">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113992.877" y="128797.115" z="28.025"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>16BF5</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe975 (1)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17826</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe255</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash79" guid="8dc6736d-d8c0-4369-bf7c-de2af7b19fb6" href="R40 Storm_files\cd050014.jpg" status="active" distance="-0.032">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113991.103" y="128806.684" z="28.132"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>16BF5</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe975 (1)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17823</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe254</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash82" guid="8ed394cc-4474-4c3f-ac02-34cb05bf4dae" href="R40 Storm_files\cd050015.jpg" status="active" distance="-0.019">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114033.219" y="128709.822" z="28.817"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A31B</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (419)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A1B</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (79)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash86" guid="dfa95fef-d82a-4b17-b0b0-f3a6d2fe8e3c" href="R40 Storm_files\cd050016.jpg" status="active" distance="-0.015">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114000.548" y="128752.270" z="27.655"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="10" minute="31" second="37"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>16BE0</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe976</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17847</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe280</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash31" guid="d705d8ed-c975-4369-a8a0-e702085ed4ce" href="R40 Storm_files\cd050017.jpg" status="active" distance="-0.065">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114103.751" y="128709.851" z="28.182"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A423</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (616)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179FA</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (68)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash32" guid="89d0b9ab-dbf0-4a4b-8ae2-f7ec6ab2ac97" href="R40 Storm_files\cd050018.jpg" status="active" distance="-0.064">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114100.383" y="128729.978" z="28.320"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A423</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (616)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179F4</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (66)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash33" guid="e467a4e0-24f3-40ce-84fe-c70a82165df1" href="R40 Storm_files\cd050019.jpg" status="active" distance="-0.052">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114092.736" y="128810.724" z="29.473"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>19BC4</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>LV1_4x160-002</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179D3</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (54)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash35" guid="7e405af1-c86b-4966-b440-fa6dfa53677c" href="R40 Storm_files\cd050020.jpg" status="active" distance="-0.046">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114102.244" y="128709.600" z="28.448"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A442</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (730)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179FA</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (68)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash40" guid="8952f198-bb6f-40b4-9995-089624e87dbb" href="R40 Storm_files\cd050021.jpg" status="active" distance="-0.040">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114095.844" y="128753.239" z="28.558"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A423</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (616)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179E8</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (62)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash42" guid="58d0d008-cb54-47c3-91a7-3d8cc58fc4fc" href="R40 Storm_files\cd050022.jpg" status="active" distance="-0.037">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113893.178" y="128633.419" z="26.925"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>16748</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>MH984 (4)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Structure</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1E34D</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe935 (2)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash45" guid="fd9f3f3b-e89b-4c8b-9d10-264e0186533a" href="R40 Storm_files\cd050023.jpg" status="active" distance="-0.035">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114104.369" y="128709.977" z="28.095"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A424</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (618)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179FA</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (68)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash46" guid="7e174be6-9e6f-4611-8a65-8ddfb091d91d" href="R40 Storm_files\cd050024.jpg" status="active" distance="-0.034">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114105.765" y="128697.180" z="28.088"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A423</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (616)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A0C</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (74)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash47" guid="3e7734f9-7fc9-453e-b64d-5bdc45e10388" href="R40 Storm_files\cd050025.jpg" status="active" distance="-0.032">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113869.154" y="128687.235" z="28.971"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>GUID</name>
+                  <value>930bddd8-1983-5abd-802b-d02aeeacea27</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>g-LGF-Lighting Columns1 [9439286]</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Geometry</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>177A2</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe24</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash49" guid="f36a6837-23a5-40c5-af9e-da29233a65ba" href="R40 Storm_files\cd050026.jpg" status="active" distance="-0.027">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113858.945" y="128741.203" z="29.005"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>254DA</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>MH986 (785)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Structure</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1778C</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe17</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash50" guid="5f4e919a-40b7-4d10-a794-fb2e5ae42990" href="R40 Storm_files\cd050027.jpg" status="active" distance="-0.026">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114102.614" y="128709.761" z="28.346"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A441</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (729)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>179FA</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (68)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash51" guid="823245de-80ee-4a5e-b3d7-a678644848ed" href="R40 Storm_files\cd050028.jpg" status="active" distance="-0.026">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="114104.332" y="128696.929" z="28.322"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A442</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe - (730)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pressure Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A0C</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (74)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="Clash55" guid="468aba59-eb51-4d00-a12f-d78ac3c0a68c" href="R40 Storm_files\cd050029.jpg" status="active" distance="-0.023">
+            <resultstatus>Active</resultstatus>
+            <clashpoint>
+              <pos3f x="113828.790" y="128693.144" z="29.777"/>
+            </clashpoint>
+            <createddate>
+              <date year="2025" month="10" day="17" hour="7" minute="57" second="14"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>1A021</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe917 (336)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>Entity Handle</name>
+                  <value>17A75</value>
+                </objectattribute>
+                <smarttags>
+                  <smarttag>
+                    <name>Item Name</name>
+                    <value>Pipe915 (244)</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>Item Type</name>
+                    <value>Pipe</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+    </clashtests>
+    <selectionsets/>
+  </batchtest>
+</exchange>
